@@ -6,5 +6,6 @@ router
     .get("/roupas", purchases.GETpurchases)
     .get("/roupas/:id", purchases.GETpurchase) 
     .post("/roupas", purchases.POSTpurchases)
+    .delete("/roupas/:id", purchases.DELETEpurchase)
     
 module.exports = router;

@@ -27,5 +27,14 @@ module.exports = {
             res.status(200).json({ success:"Item criado com sucesso!" });
         })
     },
+
+    DELETEpurchase:(req,res)=>{
+        const id = req.params.id;
+        const query = `DELETE FROM lojaRoupas WHERE item_id='${id}'`;
+        conn.query(query,(error,results)=>{
+            if (error) throw error;
+            res.status(200).json({ success:"Item excluído com sucesso!" });
+        })
+    },
 }
 
