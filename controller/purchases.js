@@ -36,5 +36,15 @@ module.exports = {
             res.status(200).json({ success:"Item excluído com sucesso!" });
         })
     },
+
+    PUTpurchase:(req,res)=>{
+        const id = req.params.id;
+        const { descricao, valor } = req.body;
+        const query = `UPDATE lojaRoupas SET descricao='${descricao}', valor='${valor}' WHERE id_item='${id}'`;
+        conn.query(query,(error,results)=>{
+            if (error) throw error;
+            res.status(200).json({ success:"Item atualizado com sucesso!" });
+        })
+    }
 }
 
