@@ -18,5 +18,14 @@ module.exports = {
             res.status(200).json(results[0]);
         })
     },
+
+    POSTpurchases:(req,res)=>{
+        const { descricao, valor } = req.body;
+        const query = `INSERT INTO lojaRoupas SET descricao='${descricao}', valor='${valor}'`;
+        conn.query(query,(error,results)=>{
+            if (error) throw error;
+            res.status(200).json({ success:"Item criado com sucesso!" });
+        })
+    },
 }
 

@@ -5,5 +5,6 @@ const purchases = require("../controller/purchases")
 router 
     .get("/roupas", purchases.GETpurchases)
     .get("/roupas/:id", purchases.GETpurchase) 
+    .post("/roupas", purchases.POSTpurchases)
     
 module.exports = router;
